@@ -1,4 +1,3 @@
-//git try
 //libraries
 #include <iostream>
 #include <string>
@@ -26,8 +25,8 @@ int main()
 	double WindChillTemperature;
 	
 	//asks for filename
-	// cout << "Enter the filename: ";
-	// cin >> fileName;
+	cout << "Enter the filename: ";
+	cin >> fileName;
 	
 	//calls the function to count the number of datapoint in first two lines
 	//will be used to dynamically allocate arrays
