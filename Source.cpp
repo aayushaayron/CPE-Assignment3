@@ -66,8 +66,8 @@ int main()
 		
 		// cout << indexTemps <<endl;
 		// cout << indexWindSpeed <<endl;
-		// cout <<apprTemp << "   " << indexTemps <<endl;
-		// cout << apprWSpeed << "   " << indexWindSpeed <<endl;
+		cout <<apprTemp << "   " << indexTemps <<endl;
+		cout << apprWSpeed << "   " << indexWindSpeed <<endl;
 
 		temperatureDrop(tempInput,indexTemps,indexWindSpeed,tempDrop, WindChillTemperature);
 
@@ -305,8 +305,8 @@ void userInput(int& apprTemp, int& apprWSpeed, double& tempInput, double& wSpeed
 		}
 		else if (wSpeedInput==windSpeed[i])
 			apprWSpeed=windSpeed[i];
-		else if (wSpeedInput==windSpeed[i-1])
-			apprWSpeed=windSpeed[i-1];
+		else if (wSpeedInput==windSpeed[i+1])
+			apprWSpeed=windSpeed[i+1];
 	}
 
 
