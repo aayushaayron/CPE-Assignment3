@@ -64,6 +64,9 @@ int main()
 		indexTracing(apprTemp, apprWSpeed, indexTemps, indexWindSpeed, temps,windSpeed, numTemp, numWSpeed);
 		// cout << indexTemps <<endl;
 		// cout << indexWindSpeed <<endl;
+		// cout <<apprTemp << "   " << indexTemps <<endl;
+		// cout << apprWSpeed << "   " << indexWindSpeed <<endl;
+
 
 		temperatureDrop(tempInput,indexTemps,indexWindSpeed,tempDrop, WindChillTemperature);
 
@@ -199,16 +202,16 @@ void userInput(int& apprTemp, int& apprWSpeed, double& tempInput, double& wSpeed
 	//selects the value from the array whose value is closer to the input value
 	for (int i = 0; i < numTemp-1; i++)
 	{
-		if (tempInput<temps[i] && tempInput>temps[i + 1])
+		if (tempInput<temps[i] && tempInput>temps[i+1])
 		{
 			double avg = (temps[i] + temps[i + 1]) / 2.0;
 			if (tempInput >= avg)
 			{
 				apprTemp = temps[i];
 			}
-			else
+			else if (tempInput<avg)
 			{
-				apprTemp = temps[i + 1];
+				apprTemp = temps[i+1];
 			}
 		}
 		else if (tempInput==temps[i])
@@ -230,8 +233,8 @@ void userInput(int& apprTemp, int& apprWSpeed, double& tempInput, double& wSpeed
 		}
 		else if (wSpeedInput==windSpeed[i])
 			apprWSpeed=windSpeed[i];
-		else if (wSpeedInput==windSpeed[i+1])
-			apprWSpeed=windSpeed[i+1];
+		else if (wSpeedInput==windSpeed[i-1])
+			apprWSpeed=windSpeed[i-1];
 	}
 }
 
