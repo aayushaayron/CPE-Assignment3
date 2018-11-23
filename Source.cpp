@@ -260,7 +260,7 @@ void temperatureDrop (double tempInput,int indexTemps, int indexWindSpeed, doubl
 	corresValue=tempDrop[indexWindSpeed][indexTemps];
 
 
-	computed=corresValue-tempInput;
+	computed=tempInput-corresValue;
 	WindChillTemperature=computed;
 
 }
